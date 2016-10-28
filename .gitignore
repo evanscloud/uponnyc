@@ -52,6 +52,7 @@ bower.json
 
 # Misc
 spec.md
+notes.md
 DS_Store
 
 *.log
