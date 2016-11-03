@@ -1,3 +1,3 @@
 class Organization < ApplicationRecord
-  has_many :causes
+  has_many :events
 end
