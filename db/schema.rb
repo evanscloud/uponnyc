@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20161103024509) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
-    t.string   "type"
+    t.string   "event_type"
     t.time     "start_time"
     t.time     "end_time"
     t.date     "start_date"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20161103024509) do
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
     t.text     "description"
     t.text     "mission_statement"
     t.string   "url"
