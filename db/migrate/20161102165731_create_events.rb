@@ -12,6 +12,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :skills_needed
       t.integer :minimum_age
       t.string :url
+      t.integer :organization_id
+      t.integer :cause_id
 
       t.timestamps
     end
