@@ -8,7 +8,7 @@ module Api
       end
 
       def show
-        event = Event.find_by(params[:id])
+        event = Event.find_by_id(params[:id])
         render json: event
       end
 
@@ -22,7 +22,7 @@ module Api
       end
 
       def update
-        event = Event.find_by(params[:id])
+        event = Event.find_by_id(params[:id])
         if event.update
           render json: event
         else

@@ -8,7 +8,7 @@ module Api
       end
 
       def show
-        cause = Cause.find_by(params[:id])
+        cause = Cause.find_by_id(params[:id])
         render json: cause
       end
 

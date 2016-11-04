@@ -8,7 +8,7 @@ module Api
       end
 
       def show
-        organization = Organization.find_by(params[:id])
+        organization = Organization.find_by_id(params[:id])
         render json: organization
       end
 
