@@ -1,7 +1,10 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   respond_to :json
 
+  protected
+  
   def index
   end
+
 end
