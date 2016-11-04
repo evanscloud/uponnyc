@@ -23,4 +23,4 @@ ActiveSupport.halt_callback_chains_on_return_false = false
 # Configure SSL options to enable HSTS with subdomains. Previous versions had false.
 Rails.application.config.ssl_options = { hsts: { subdomains: true } }
 
-config.active_record.time_zone_aware_types = [:datetime, :time]
+Rails.application.config.active_record.time_zone_aware_types = [:datetime, :time]
