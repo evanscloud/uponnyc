@@ -2,9 +2,9 @@
 
 ## Overview
 
-UponNYC provides a simple way to search for volunteering opportunities in New York City. This application uses AngularJS for a seamless single page experience and Rails to provide data.
+UponNYC provides a simple way to search for volunteering opportunities in New York City. This application uses AngularJS for a seamless single page experience and Rails backend to provide data. With the help of <a href="www.volunteermatch.org">VolunteerMatch's</a> Public API, this application is also providing current up-to-date opportunities that are available for registration.
 
-New York City is home to one of the world's most largest and diverse urban populations. My goal is to provide an easy tool to bring people together and build empowering communities. If each individual provides even the smallest effort, the entire community will thrive as a whole. Together, we can make a change. Lend a hand and make a difference today.
+New York City is home to one of the world's most largest and diverse urban populations. The goal is to provide an easy tool to bring people together and build empowering communities. If each individual provides even the smallest effort, the entire community will thrive as a whole. Together, we can make a change. Lend a hand and make a difference today.
 
 ## Installation
 
