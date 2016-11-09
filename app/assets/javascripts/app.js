@@ -3,6 +3,6 @@
 
 
   angular
-    .module('uponnyc', [])
+    .module('uponnyc', ['ui.router', 'templates'])
 
 }());
