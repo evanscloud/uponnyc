@@ -1,0 +1,12 @@
+$header-font-style: 'Roboto', Helvetica, Arial, sans-serif;
+$body-font-style: 'Open Sans', Arial, sans-serif;
+
+h1, h2, h3, h4, h5 {
+  font-family: $header-font-style;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+body {
+  font-family: $body-font-style;
+}
