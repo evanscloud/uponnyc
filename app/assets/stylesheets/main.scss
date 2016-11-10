@@ -1,14 +1,23 @@
 $header-font-style: 'Roboto', Helvetica, Arial, sans-serif;
 $body-font-style: 'Open Sans', Arial, sans-serif;
 
-// Add mixin block for headers
-
-h1, h2, h3, h4, h5 {
+%custom-header {
   font-family: $header-font-style;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
 
+h1 {
+  @extend %custom-header;
+  font-size: 80px;
+}
+
+h2 {
+  @extend %custom-header;
+  font-size: 26px;
+}
+
 body {
   font-family: $body-font-style;
+  font-size: 18px;
 }
