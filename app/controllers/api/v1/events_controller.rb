@@ -9,7 +9,7 @@ module Api
 
       def show
         event = Event.find_by_id(params[:id])
-        render json: event, include: ['organization.name', 'cause.name']
+        render json: event, include: ['cause.name']
       end
 
       def create
