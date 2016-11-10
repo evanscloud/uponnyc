@@ -14,9 +14,8 @@
       $stateProvider
         .state('causes', {
           url: '/causes',
-          templateUrl: 'causes/causes.html'
+          templateUrl: 'causes/index.html'
         })
-
 
       $urlRouterProvider.otherwise('/')
     })
