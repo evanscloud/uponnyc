@@ -1,6 +1,8 @@
 $header-font-style: 'Roboto', Helvetica, Arial, sans-serif;
 $body-font-style: 'Open Sans', Arial, sans-serif;
 
+// Add mixin block for headers
+
 h1, h2, h3, h4, h5 {
   font-family: $header-font-style;
   font-weight: bold;
