@@ -1,11 +1,22 @@
-<div class="ui vertical container" id="cause">
+<div class="ui container" id="cause">
 
   <h2>I care about...</h2>
 
-  <div ng-repeat="cause in vm.causes | orderBy: cause.id">
+  <select class="ui search dropdown">
+    <option value="">Cause</option>
+    <option ng-repeat="cause in vm.causes | orderBy: cause.id">
 
-    {{ cause.attributes.name }}
+      <a ui-sref=".show({causeId: cause.id})">{{ cause.attributes.name }}</a>
 
-  </div>
+    </option>
+  </select>
+
+  <ui-view></ui-view>
 
 </div>
+
+<script type="text/javascript">
+  $('.ui.dropdown')
+    .dropdown()
+  ;
+</script>
