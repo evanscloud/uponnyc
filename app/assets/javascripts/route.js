@@ -11,10 +11,15 @@
           templateUrl: 'home/home.html',
           controller: 'HomeController as vm'
         })
-      $stateProvider
         .state('causes', {
           url: '/causes',
-          templateUrl: 'causes/index.html'
+          templateUrl: 'causes/index.html',
+          controller: 'CausesController as vm',
+          resolve: {
+            causes: function(CausesService) {
+              return CausesService.getCauses();
+            }
+          }
         })
 
       $urlRouterProvider.otherwise('/')

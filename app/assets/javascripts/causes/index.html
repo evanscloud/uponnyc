@@ -1,4 +1,3 @@
-<div class="ui huge labels">
-  <div class="ui label">
-  </div>
+<div ng-repeat="cause in vm.causes | orderBy: cause.id">
+  <p>{{ cause.attributes.name }}</p>
 </div>
