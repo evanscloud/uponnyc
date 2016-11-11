@@ -1,3 +1,11 @@
-<div ng-repeat="cause in vm.causes | orderBy: cause.id">
-  <p>{{ cause.attributes.name }}</p>
+<div class="ui vertical container" id="cause">
+
+  <h2>I care about...</h2>
+
+  <div ng-repeat="cause in vm.causes | orderBy: cause.id">
+
+    {{ cause.attributes.name }}
+
+  </div>
+
 </div>
