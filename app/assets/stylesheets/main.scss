@@ -25,6 +25,7 @@ h3 {
 body {
   font-family: $body-font-style;
   font-size: 17px;
+  height: auto !important;
 }
 
 footer {
@@ -32,6 +33,9 @@ footer {
   font-size: 10px;
   letter-spacing: 0.5px;
   text-align: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
 }
