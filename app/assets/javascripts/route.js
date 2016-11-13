@@ -21,6 +21,10 @@
             }
           }
         })
+        .state('causes.show', {
+          url: '/:causeId',
+          templateUrl: 'causes/show.html'
+        })
 
       $urlRouterProvider.otherwise('/')
     })
