@@ -22,8 +22,14 @@
           }
         })
         .state('causes.show', {
-          url: '/:causeId',
-          templateUrl: 'causes/show.html'
+          url: '/:id',
+          templateUrl: 'causes/show.html',
+          controller: 'CauseController as vm',
+          resolve: {
+            cause: function($stateParams, CausesService) {
+              return CausesService.getCause($stateParams);
+            }
+          }
         })
 
       $urlRouterProvider.otherwise('/')
