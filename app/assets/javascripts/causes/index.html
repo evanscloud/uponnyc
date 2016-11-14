@@ -7,19 +7,11 @@
     <div class="menu transition hidden">
       <div data-value="{{ cause.id }}" class="item" ng-repeat="cause in vm.causes">
 
-        <a ui-sref="causes.show({causeId: cause.id})">{{ cause.attributes.name }}</a>
+        <a ui-sref="causes.show({id: cause.id})">{{ cause.attributes.name }}</a>
 
       </div>
     </div>
   </div>
-
-  <div ng-repeat="cause in vm.causes">
-
-    <a ui-sref="causes.show({id: cause.id})">{{ cause.attributes.name }}</a>
-
-  </div>
-
-  <br><br>
 
   <ui-view></ui-view>
 
