@@ -6,6 +6,7 @@
 
     var vm = this;
     vm.causes = causes.data;
+
   };
 
   angular

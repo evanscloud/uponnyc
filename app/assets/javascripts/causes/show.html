@@ -1,0 +1,42 @@
+<div class="ui container">
+
+  <div class="ui container">
+
+    <h3>Available Volunteering Opportunities</h3>
+
+    <div class="ui card" ng-repeat="event in vm.events">
+      <div class="content">
+        <div class="header">Title: {{ event.attributes.title }}</div>
+      </div><!-- header -->
+
+      <div class="content">
+        <h4 class="ui sub header">Organization: {{ event.attributes.organization }}</h4>
+        <div class="ui small feed">
+          <div class="event"attributes.>
+            <div class="content">
+              <div class="summary">
+                Date: {{ event.attributes.start_date }} - {{ event.attributes.end_date }}
+                Time: {{ event.attributes.start_time }} - {{ event.attributes.end_time }}
+                Location: {{ event.attributes.address }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- content -->
+
+      <div class="extra content">
+        <button class="ui button" ui-sref="">Learn More</button>
+      </div><!-- button -->
+
+    </div>
+  </div>
+
+  <ui-view></ui-view>
+
+</div>
+
+<script type="text/javascript">
+  $('.ui.modal')
+    .modal('show')
+  ;
+</script>
