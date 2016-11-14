@@ -5,12 +5,18 @@
   <div class="ui selection dropdown">
     <div class="text">Cause</div><i class="dropdown icon"></i>
     <div class="menu transition hidden">
-      <div data-value="{{ cause.id }}" class="item" ng-repeat="cause in vm.causes | orderBy: cause.id">
+      <div data-value="{{ cause.id }}" class="item" ng-repeat="cause in vm.causes">
 
         <a ui-sref="causes.show({causeId: cause.id})">{{ cause.attributes.name }}</a>
 
       </div>
     </div>
+  </div>
+
+  <div ng-repeat="cause in vm.causes">
+
+    <a ui-sref="causes.show({id: cause.id})">{{ cause.attributes.name }}</a>
+
   </div>
 
   <br><br>
