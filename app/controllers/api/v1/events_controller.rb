@@ -21,19 +21,6 @@ module Api
         end
       end
 
-      def update
-        event = Event.find_by_id(params[:id])
-        if event.update
-          render json: event
-        else
-          render json: { errors: event.errors.full_messages }, status: :unprocessable_entity
-        end
-      end
-
-      def destroy
-        respond_with(Event.destroy(params[:id]))
-      end
-
       private
 
       def event_params
