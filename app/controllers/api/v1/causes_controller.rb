@@ -9,7 +9,7 @@ module Api
 
       def show
         cause = Cause.find_by_id(params[:id])
-        render json: cause
+        render json: cause, include: ['events']
       end
 
     end
