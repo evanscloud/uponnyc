@@ -36,7 +36,7 @@
           templateUrl: 'events/show.html',
           controller: 'EventsController as vm',
           resolve: {
-            cause: function($stateParams, EventsService) {
+            event: function($stateParams, EventsService) {
               return EventsService.getEvent($stateParams);
             }
           }
