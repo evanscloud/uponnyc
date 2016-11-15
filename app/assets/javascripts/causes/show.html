@@ -32,7 +32,7 @@
         </div><!-- content -->
 
         <div class="ui bottom attached button">
-          <div ui-sref="event({id: event.attributes.id})">Learn More</div>
+          <div ui-sref="causes.event({ causeId: event.relationships.cause.data.id, eventId: event.id })">Learn More</div>
         </div><!-- button -->
 
       </div><!-- card -->
@@ -40,7 +40,3 @@
   </div><!-- grid -->
 
 </div><!-- container -->
-
-<ui-view></ui-view>
-
-</div>
