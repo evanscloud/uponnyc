@@ -7,8 +7,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.datetime :end
       t.text :description
       t.string :address
-      t.text :skills_needed
-      t.integer :minimum_age
+      t.text :skills
+      t.integer :age
       t.string :url
       t.integer :cause_id
 

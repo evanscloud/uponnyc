@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20161103021705) do
     t.datetime "end"
     t.text     "description"
     t.string   "address"
-    t.text     "skills_needed"
-    t.integer  "minimum_age"
+    t.text     "skills"
+    t.integer  "age"
     t.string   "url"
     t.integer  "cause_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
