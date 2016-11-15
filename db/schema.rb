@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 20161103021705) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "organization"
-    t.time     "start_time"
-    t.time     "end_time"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.text     "description"
     t.string   "address"
     t.text     "skills_needed"
