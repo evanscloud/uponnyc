@@ -31,6 +31,16 @@
             }
           }
         })
+        .state('causes.event', {
+          url: '/:causeId/events/:eventId',
+          templateUrl: 'events/show.html',
+          controller: 'EventsController as vm',
+          resolve: {
+            cause: function($stateParams, EventsService) {
+              return EventsService.getEvent($stateParams);
+            }
+          }
+        })
 
       $urlRouterProvider.otherwise('/')
     })
