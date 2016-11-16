@@ -1,12 +1,18 @@
 #event {
   margin-top: 50px;
   margin-bottom: 100px;
+  .ui.card {
+    width: 60%;
+    margin: auto;
+  }
+  h2 {
+    display: inline;
+  }
 }
 
-#event h2 {
-  display: inline;
-}
-
-.ui.card {
-  width: 100%;
+@media screen and (max-width: 700px) {
+  #event .ui.card {
+    margin: 0;
+    width: 100%;
+  }
 }
