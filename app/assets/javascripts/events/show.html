@@ -1,0 +1,48 @@
+<div class="ui container" id="event">
+
+  <div class="ui stackable one column grid">
+    <div class="column">
+
+      <div class="ui card">
+
+        <div class="content">
+          <div class="header">{{ vm.event.attributes.title }}</div>
+        </div><!-- header -->
+
+        <div class="content">
+          <h3>Organization: {{ vm.event.attributes.organization }}</h3>
+          <div class="ui large feed">
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  Location: {{ vm.event.attributes.address }}
+                  <br>
+                  Start Date: {{ vm.event.attributes.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+                  <br>
+                  End Date: {{ vm.event.attributes.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+
+                  <h3>Information</h3>
+                  <p>Description:<br>
+                    {{ vm.event.attributes.description }}
+                  </p>
+
+                  <p>
+                    Minimum Age: {{ vm.event.attributes.age }}
+                    <br>
+                    Skills Needed: {{ vm.event.attributes.skills }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- content -->
+
+
+        <div class="ui positive right labeled icon button" ng-click="openurl('{{ vm.event.attributes.url }}');">Volunteer Now <i class="checkmark icon"></i></div><!-- volunteer button -->
+
+
+      </div><!-- card -->
+    </div><!-- column -->
+  </div><!-- grid -->
+
+</div>
