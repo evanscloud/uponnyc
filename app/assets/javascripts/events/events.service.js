@@ -10,6 +10,10 @@
         .catch(handleError)
     };
 
+    this.newEvent = function() {
+      return $http.post()
+    };
+
     function handleSuccess(response) {
       console.log(response);
       return response.data;
