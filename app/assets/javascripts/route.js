@@ -31,6 +31,11 @@
             }
           }
         })
+        .state('causes.new', {
+          url: '/:id/events/new',
+          templateUrl: 'events/new.html',
+          controller: 'EventsController as vm'
+        })
         .state('causes.event', {
           url: '/:causeId/events/:eventId',
           templateUrl: 'events/show.html',
