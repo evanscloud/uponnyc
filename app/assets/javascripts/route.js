@@ -22,7 +22,7 @@
           }
         })
         .state('causes.show', {
-          url: '/:id',
+          url: '/:id/events',
           templateUrl: 'causes/show.html',
           controller: 'CauseController as vm',
           resolve: {
