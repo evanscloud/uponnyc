@@ -13,7 +13,8 @@ module Api
       end
 
       def create
-        event = Event.create(event_params)
+        cause = Cause.find_by_id(params[:cause_id])
+        event = cause.events.create(event_params)
         if event.save
           render json: event
         else
