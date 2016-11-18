@@ -10,7 +10,8 @@
       "angular": "v1.5.8",
       "angular-ui-router": "latest",
       "moment": "latest",
-      "angular-moment": "latest"
+      "angular-moment": "latest",
+      "angular-messages": "latest"
     }
   }
 }
