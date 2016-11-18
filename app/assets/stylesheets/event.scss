@@ -28,6 +28,10 @@
   }
 }
 
+#new-form .ui.button {
+  width: 100%;
+}
+
 @media screen and (max-width: 800px) {
   #event {
     .ui.card {
