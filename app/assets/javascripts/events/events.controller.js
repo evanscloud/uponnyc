@@ -2,14 +2,18 @@
 
   'use strict';
 
-  function EventsController(event, $window) {
+  function EventsController(EventsService, $window, event) {
 
     var vm = this;
+
     vm.event = event.data;
-    vm.hyperlink = function () {
+    vm.hyperlink = openHyperlink;
+
+
+    function openHyperlink() {
       $window.open('http://' + event.data.attributes.url);
     };
-
+    
   };
 
   angular
