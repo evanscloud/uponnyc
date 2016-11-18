@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :causes, only: [:index, :show] do
-        resources :events, only: [:index, :show, :new]
+        resources :events, only: [:index, :show, :new, :create]
       end
     end
   end
