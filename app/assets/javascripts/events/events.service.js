@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function EventsService($http) {
+  function EventsService($http, $state) {
 
     this.getEvent = function(param) {
       return $http.get('api/v1/causes/' + param.causeId + '/events/' + param.eventId + '.json')
@@ -10,8 +10,13 @@
         .catch(handleError)
     };
 
-    this.newEvent = function() {
-      return $http.post()
+    this.newEvent = function(cause, eventData) {
+      return $http.post('api/v1/causes/' + cause.id  + '/events.json', eventData)
+        .then(showCause(cause))
+    };
+
+    function showCause(cause) {
+      $state.go('causes.show', { id: cause.id });
     };
 
     function handleSuccess(response) {
