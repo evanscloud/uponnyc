@@ -12,11 +12,16 @@
 
     this.newEvent = function(cause, eventData) {
       return $http.post('api/v1/causes/' + cause.id  + '/events.json', eventData)
-        .then(showCause(cause))
+        .then(showEvent)
     };
 
-    function showCause(cause) {
-      $state.go('causes.show', { id: cause.id });
+    function showEvent(cause) {
+      var params = {};
+
+      params.causeId = cause.data.data.relationships.cause.data.id;
+      params.eventId = cause.data.data.id;
+
+      $state.go('causes.event', { causeId: params.causeId, eventId: params.eventId });
     };
 
     function handleSuccess(response) {
