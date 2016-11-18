@@ -1,0 +1,72 @@
+<div class="ui card" id="new-form">
+
+  <div class="content">
+    <div class="form-header"><h2>Create a New Opportunity</h2></div>
+  </div>
+  <!-- header -->
+
+  <form class="ui form" name="form" ng-submit="$ctrl.postEvent()">
+
+    <div class="field" id="text-field">
+      <label>Title</label>
+      <input type="text" name="title" ng-model="$ctrl.event.title" placeholder="Title">
+    </div><!-- title -->
+
+    <div class="field" id="text-field">
+      <label>Organization</label>
+      <input type="text" name="organization" ng-model="$ctrl.event.organization" placeholder="Organization">
+    </div><!-- organization -->
+
+    <div class="field" id="text-field">
+      <label>Location</label>
+      <input type="text" name="location" ng-model="$ctrl.event.address" placeholder="1 Utopia Way, New York, NY 10001">
+    </div><!-- address -->
+
+    <div class="two fields">
+
+      <div class="field" id="start-date-field">
+        <label>Start Date</label>
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="datetime-local" ng-model="$ctrl.event.start" name="start-date">
+        </div>
+      </div><!-- start date -->
+
+      <div class="field" id="end-date-field">
+        <label>End Date</label>
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="datetime-local" ng-model="$ctrl.event.end" name="end-date">
+        </div>
+      </div><!-- end date -->
+
+    </div><!-- datetime fields -->
+
+    <div class="field" id="text-field">
+      <label>Description</label>
+      <textarea rows="3" name="description" ng-model="$ctrl.event.description" placeholder="Description"></textarea>
+    </div><!-- description -->
+
+    <div class="field" id="text-field">
+      <label>Skills Needed</label>
+      <input type="text" name="skills" ng-model="$ctrl.event.skills" placeholder="Skills Needed">
+    </div><!-- skills -->
+
+    <div class="field" id="text-field">
+      <label>Age Requirement</label>
+      <input type="text" name="age" ng-model="$ctrl.event.age" placeholder="42">
+    </div><!-- age -->
+
+    <div class="field" id="text-field">
+      <label>URL</label>
+      <input type="text" name="url" ng-model="$ctrl.event.url" placeholder="www.example.com">
+    </div><!-- url -->
+
+    <br>
+
+    <input type="submit" value="Create Event">
+    <!-- submit button -->
+
+  </form><!-- form -->
+
+</div><!-- card -->
