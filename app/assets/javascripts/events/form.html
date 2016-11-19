@@ -9,17 +9,26 @@
 
     <div class="field" id="text-field">
       <label>Title</label>
-      <input type="text" name="title" ng-model="$ctrl.event.title" placeholder="Title">
+      <input type="text" name="title" ng-model="$ctrl.event.title" placeholder="Title" required="required"></input>
+      <div ng-messages="form.title.error" ng-show="form.title.$touched || form.$submitted">
+        <div class="ui error message" ng-message="required">Please provide a title.</div>
+      </div>
     </div><!-- title -->
 
     <div class="field" id="text-field">
       <label>Organization</label>
-      <input type="text" name="organization" ng-model="$ctrl.event.organization" placeholder="Organization">
+      <input type="text" name="organization" ng-model="$ctrl.event.organization" placeholder="Organization" required="required"></input>
+      <div ng-messages="form.organization.error" ng-show="form.organization.$touched || form.$submitted">
+        <div class="ui error message" ng-message="required">Please provide an organization.</div>
+      </div>
     </div><!-- organization -->
 
     <div class="field" id="text-field">
       <label>Location</label>
-      <input type="text" name="location" ng-model="$ctrl.event.address" placeholder="1 Utopia Way, New York, NY 10001">
+      <input type="text" name="location" ng-model="$ctrl.event.address" placeholder="1 Utopia Way, New York required="required", NY 10001"></input>
+      <div ng-messages="form.address.error" ng-show="form.address.$touched || form.$submitted">
+        <div class="ui error message" ng-message="required">Please provide a full address.</div>
+      </div>
     </div><!-- address -->
 
     <div class="two fields">
@@ -28,7 +37,10 @@
         <label>Start Date</label>
         <div class="ui input left icon">
           <i class="calendar icon"></i>
-          <input type="datetime-local" ng-model="$ctrl.event.start" name="start-date">
+          <input type="datetime-local" ng-model="$ctrl.event.start" name="start-date" required="required"></input>
+        </div>
+        <div ng-messages="form.start-date.error" ng-show="form.start-date.$touched || form.$submitted">
+          <div class="ui error message" ng-message="required">Please select a start date.</div>
         </div>
       </div><!-- start date -->
 
@@ -36,7 +48,10 @@
         <label>End Date</label>
         <div class="ui input left icon">
           <i class="calendar icon"></i>
-          <input type="datetime-local" ng-model="$ctrl.event.end" name="end-date">
+          <input type="datetime-local" ng-model="$ctrl.event.end" name="end-date" required="required"></input>
+        </div>
+        <div ng-messages="form.end-date.error" ng-show="form.end-date.$touched || form.$submitted">
+          <div class="ui error message" ng-message="required">Please select an end date.</div>
         </div>
       </div><!-- end date -->
 
@@ -44,28 +59,34 @@
 
     <div class="field" id="text-field">
       <label>Description</label>
-      <textarea rows="3" name="description" ng-model="$ctrl.event.description" placeholder="Description"></textarea>
+      <textarea rows="3" name="description" ng-model="$ctrl.event.description" placeholder="Description" required="required"></textarea>
+      <div ng-messages="form.description.error" ng-show="form.description.$touched || form.$submitted">
+        <div class="ui error message" ng-message="required">Please provide a description.</div>
+      </div>
     </div><!-- description -->
 
     <div class="field" id="text-field">
       <label>Skills Needed</label>
-      <input type="text" name="skills" ng-model="$ctrl.event.skills" placeholder="Skills Needed">
+      <input type="text" name="skills" ng-model="$ctrl.event.skills" placeholder="Skills Needed"></input>
     </div><!-- skills -->
 
     <div class="field" id="text-field">
       <label>Age Requirement</label>
-      <input type="text" name="age" ng-model="$ctrl.event.age" placeholder="42">
+      <input type="text" name="age" ng-model="$ctrl.event.age" placeholder="42"></input>
     </div><!-- age -->
 
     <div class="field" id="text-field">
       <label>URL</label>
-      <input type="text" name="url" ng-model="$ctrl.event.url" placeholder="www.example.com">
+      <input type="text" name="url" ng-model="$ctrl.event.url" placeholder="www.example.com" required="required"></input>
+      <div ng-messages="form.url.error" ng-show="form.url.$touched || form.$submitted">
+        <div class="ui error message" ng-message="required">Please provide a link to the event.</div>
+      </div>
     </div><!-- url -->
 
     <br>
 
     <div class="ui bottom attached button">
-      <input class="ui button" type="submit" value="Create Opportunity">
+      <input class="ui button" type="submit" value="Create Event"></input>
     </div>
     <!-- submit button -->
 
