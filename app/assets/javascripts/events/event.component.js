@@ -13,7 +13,6 @@
     var ctrl = this;
     ctrl.postEvent = postEvent;
 
-
     function postEvent() {
       return EventsService.newEvent($stateParams, ctrl.event);
     };

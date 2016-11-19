@@ -4,8 +4,8 @@
 
   function EventsService($http, $state) {
 
-    this.getEvent = function(param) {
-      return $http.get('api/v1/causes/' + param.causeId + '/events/' + param.eventId + '.json')
+    this.getEvent = function(params) {
+      return $http.get('api/v1/events/' + params.eventId + '.json')
         .then(handleSuccess)
         .catch(handleError)
     };
