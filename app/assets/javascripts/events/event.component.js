@@ -4,7 +4,7 @@
 
   var newEvent = {
     transclude: true,
-    templateUrl: 'events/form.html',
+    templateUrl: 'events/event-form.html',
     controller: NewEventController
   };
 
