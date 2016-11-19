@@ -9,7 +9,7 @@ module Api
 
       def show
         comment = Comment.find_by_id(params[:id])
-        render json: comment, include: ['event']
+        render json: comment, include: ['events']
       end
 
       def create
