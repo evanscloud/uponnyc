@@ -45,7 +45,20 @@
 
       <br>
 
-      <comments></comments>
+      <div class="ui card" id="comment">
+
+        <comments></comments>
+
+        <div ng-repeat="comment in vm.comments">
+
+          Name: {{ comment.attributes.name }}
+          <p>{{ comment.attributes.content }}</p>
+          
+          <br>
+
+        </div>
+
+      </div><!-- comments -->
 
     </div><!-- column -->
   </div><!-- grid -->
