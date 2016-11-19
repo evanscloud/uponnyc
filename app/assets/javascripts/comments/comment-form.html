@@ -1,0 +1,22 @@
+<form class="ui form" name="form" ng-submit="$ctrl.postComment()">
+
+  <div class="field" id="text-field">
+    <label>Name</label>
+    <input type="text" name="name" ng-model="$ctrl.comment.name" placeholder="Name" required="required"></input>
+    <div ng-messages="form.name.error" ng-show="form.name.$touched || form.$submitted">
+      <div class="ui error message" ng-message="required">Please provide a name.</div>
+    </div>
+  </div><!-- name -->
+
+  <div class="field" id="text-field">
+    <label>Content</label>
+    <textarea rows="2" name="content" ng-model="$ctrl.comment.content" placeholder="This volunteer opportunity is awesome!" required="required"></textarea>
+    <div ng-messages="form.content.error" ng-show="form.content.$touched || form.$submitted">
+      <div class="ui error message" ng-message="required">Comment box can't be blank.</div>
+    </div>
+  </div><!-- content -->
+
+    <input class="small ui button" type="submit" value="Add Comment"></input>
+  <!-- submit button -->
+
+</form><!-- form -->
