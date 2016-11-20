@@ -2,11 +2,12 @@
 
   'use strict';
 
-  function CauseController(cause) {
+  function CauseController($scope, cause) {
 
     var vm = this;
     vm.cause = cause.data;
     vm.events = cause.included;
+    $scope.orderList = "attributes.title";
 
   };
 

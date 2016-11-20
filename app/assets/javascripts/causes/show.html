@@ -7,10 +7,18 @@
     </div>
   </div>
 
+  <span>
+    <select ng-model="orderList" class="ui dropdown" id="select">
+      <option class="default text" value="">Relevance</option>
+      <option value="-attributes['created-at']">Recently Added</option>
+      <option value="attributes.end">Ending Soon</option>
+    </select>
+  </span>
+
   <br><br>
 
   <div class="ui stackable three column grid">
-    <div class="column" ng-repeat="event in vm.events">
+    <div class="column" ng-repeat="event in vm.events | orderBy: orderList">
 
       <div class="ui card">
 
@@ -47,3 +55,9 @@
   </div><!-- grid -->
 
 </div><!-- container -->
+
+<script type="text/javascript">
+  $('.ui.dropdown')
+    .dropdown()
+  ;
+</script>
