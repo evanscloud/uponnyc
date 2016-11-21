@@ -19,6 +19,8 @@
 
   };
 
+  NewEventController.$inject = ['$stateParams', '$state', 'EventsService'];
+
   angular
     .module('uponnyc')
     .component('newEvent', newEvent)
