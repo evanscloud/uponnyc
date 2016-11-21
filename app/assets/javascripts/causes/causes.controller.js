@@ -9,6 +9,8 @@
 
   };
 
+  CausesController.$inject = ['cause'];
+
   angular
     .module('uponnyc')
     .controller('CausesController', CausesController)
