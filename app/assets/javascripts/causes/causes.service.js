@@ -26,6 +26,8 @@
     };
   };
 
+  CausesService.$inject = ['$http'];
+
   angular
     .module('uponnyc')
     .service('CausesService', CausesService)
