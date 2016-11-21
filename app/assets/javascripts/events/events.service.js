@@ -34,6 +34,8 @@
     };
   };
 
+  EventsService.$inject = ['$http', '$state'];
+
   angular
     .module('uponnyc')
     .service('EventsService', EventsService)
