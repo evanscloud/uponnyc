@@ -11,6 +11,8 @@
 
   };
 
+  CauseController.$inject = ['$scope', 'cause'];
+
   angular
     .module('uponnyc')
     .controller('CauseController', CauseController)
