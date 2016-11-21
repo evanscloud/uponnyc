@@ -8,6 +8,8 @@
     };
   };
 
+  HomeController.$inject = ['$scope', '$location'];
+
   angular
     .module('uponnyc')
     .controller('HomeController', HomeController)
