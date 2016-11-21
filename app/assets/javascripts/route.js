@@ -1,6 +1,6 @@
 angular
   .module('uponnyc')
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',
@@ -12,20 +12,20 @@ angular
         templateUrl: 'causes/index.html',
         controller: 'CausesController as vm',
         resolve: {
-          causes: function(CausesService) {
+          causes: ['CausesService', function(CausesService) {
             return CausesService.getCauses();
           }
-        }
+        ]}
       })
       .state('causes.show', {
         url: '/:id/events',
         templateUrl: 'causes/show.html',
         controller: 'CauseController as vm',
         resolve: {
-          cause: function($stateParams, CausesService) {
+          cause: ['$stateParams', 'CausesService', function($stateParams, CausesService) {
             return CausesService.getCause($stateParams);
           }
-        }
+        ]}
       })
       .state('causes.new', {
         url: '/:id/events/new',
@@ -36,11 +36,11 @@ angular
         templateUrl: 'events/show.html',
         controller: 'EventsController as vm',
         resolve: {
-          event: function($stateParams, EventsService) {
+          event: ['$stateParams', 'EventsService', function($stateParams, EventsService) {
             return EventsService.getEvent($stateParams);
           }
-        }
+        ]}
       })
 
     $urlRouterProvider.otherwise('/')
-  })
+  }])
