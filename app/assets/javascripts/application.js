@@ -6,4 +6,5 @@
 //= require moment
 //= require angular-moment
 //= require angular-messages
+//= require_tree ./angular
 //= require_tree .
