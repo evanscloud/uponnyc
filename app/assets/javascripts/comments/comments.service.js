@@ -24,6 +24,8 @@
 
   };
 
+  CommentsService.$inject = ['$http'];
+
   angular
     .module('uponnyc')
     .service('CommentsService', CommentsService)
