@@ -16,6 +16,8 @@
 
   };
 
+  EventsController.$inject = ['$window', 'event'];
+
   angular
     .module('uponnyc')
     .controller('EventsController', EventsController)
