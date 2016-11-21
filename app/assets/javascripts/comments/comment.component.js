@@ -19,6 +19,8 @@
 
   };
 
+  NewCommentController.$inject = ['$stateParams', '$state', 'CommentsService'];
+
   angular
     .module('uponnyc')
     .component('comments', comments)
