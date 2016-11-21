@@ -1,25 +1,19 @@
-(function() {
+function EventsController($window, event) {
 
-  'use strict';
+  var vm = this;
 
-  function EventsController($window, event) {
+  vm.event = event.data;
+  vm.hyperlink = openHyperlink;
+  vm.comments = event.included;
 
-    var vm = this;
-
-    vm.event = event.data;
-    vm.hyperlink = openHyperlink;
-    vm.comments = event.included;
-
-    function openHyperlink() {
-      $window.open('http://' + event.data.attributes.url);
-    };
-
+  function openHyperlink() {
+    $window.open('http://' + event.data.attributes.url);
   };
 
-  EventsController.$inject = ['$window', 'event'];
+};
 
-  angular
-    .module('uponnyc')
-    .controller('EventsController', EventsController)
+EventsController.$inject = ['$window', 'event'];
 
-}());
+angular
+  .module('uponnyc')
+  .controller('EventsController', EventsController)

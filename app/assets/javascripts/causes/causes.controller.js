@@ -1,19 +1,12 @@
-(function() {
+function CausesController(causes) {
 
-  'use strict';
+  var vm = this;
+  vm.causes = causes.data;
 
-  function CausesController(causes) {
+};
 
-    var vm = this;
-    vm.causes = causes.data;
+CausesController.$inject = ['cause'];
 
-  };
-
-  CausesController.$inject = ['cause'];
-
-  angular
-    .module('uponnyc')
-    .controller('CausesController', CausesController)
-
-
-}());
+angular
+  .module('uponnyc')
+  .controller('CausesController', CausesController)

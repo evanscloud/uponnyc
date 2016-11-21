@@ -1,28 +1,22 @@
-(function() {
+var newEvent = {
+  transclude: true,
+  templateUrl: 'events/event-form.html',
+  controller: NewEventController
+};
 
-  'use strict';
+function NewEventController($stateParams, $state, EventsService) {
 
-  var newEvent = {
-    transclude: true,
-    templateUrl: 'events/event-form.html',
-    controller: NewEventController
+  var ctrl = this;
+  ctrl.postEvent = postEvent;
+
+  function postEvent() {
+    return EventsService.newEvent($stateParams, ctrl.event);
   };
 
-  function NewEventController($stateParams, $state, EventsService) {
+};
 
-    var ctrl = this;
-    ctrl.postEvent = postEvent;
+NewEventController.$inject = ['$stateParams', '$state', 'EventsService'];
 
-    function postEvent() {
-      return EventsService.newEvent($stateParams, ctrl.event);
-    };
-
-  };
-
-  NewEventController.$inject = ['$stateParams', '$state', 'EventsService'];
-
-  angular
-    .module('uponnyc')
-    .component('newEvent', newEvent)
-
-}());
+angular
+  .module('uponnyc')
+  .component('newEvent', newEvent)

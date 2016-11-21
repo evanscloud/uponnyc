@@ -1,21 +1,14 @@
-(function() {
+function CauseController($scope, cause) {
 
-  'use strict';
+  var vm = this;
+  vm.cause = cause.data;
+  vm.events = cause.included;
+  $scope.orderList = "attributes.title";
 
-  function CauseController($scope, cause) {
+};
 
-    var vm = this;
-    vm.cause = cause.data;
-    vm.events = cause.included;
-    $scope.orderList = "attributes.title";
+CauseController.$inject = ['$scope', 'cause'];
 
-  };
-
-  CauseController.$inject = ['$scope', 'cause'];
-
-  angular
-    .module('uponnyc')
-    .controller('CauseController', CauseController)
-
-
-}());
+angular
+  .module('uponnyc')
+  .controller('CauseController', CauseController)
