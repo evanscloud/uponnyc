@@ -11,3 +11,11 @@
     margin-right: 66px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  #cause {
+    .ui.selection.dropdown {
+      margin-right: 0px;
+    }
+  }
+}
