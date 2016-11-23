@@ -18,6 +18,7 @@ gem 'dotenv-rails'
 group :development, :test do
   gem 'pry'
   gem 'byebug', platform: :mri
+  gem 'faker'
 end
 
 group :development do
