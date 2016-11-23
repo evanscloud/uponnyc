@@ -27,6 +27,8 @@ body {
   font-size: 17px;
   height: auto !important;
   letter-spacing: 0.25px;
+  background-color: #fdf6e3;
+  // color:
 }
 
 footer {
@@ -43,6 +45,7 @@ footer {
 
 .ui.button {
   font-family: $body-font-style;
+  background: #ffbb93;
 }
 
 .ui.form {
