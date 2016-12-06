@@ -1,3 +1,5 @@
+# VolunterMatch API provided in GitHub repo file: https://github.com/volunteermatch/vm-contrib/blob/master/api-examples/ruby/apiv2.rb
+
 require 'base64'
 require 'digest/sha2'
 require 'net/http'
@@ -10,14 +12,12 @@ module Volunteermatch
   class << self
 
     def hello_world(name)
-      binding.pry
       call(:helloWorld, {:name => name}.to_json)
     end
 
     protected
 
     def call(action, json_query)
-      binding.pry
       nonce = Digest::SHA2.hexdigest(rand.to_s)[0, 20]
       creation_time = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%S%z")
       password_digest = Base64.encode64(Digest::SHA2.digest(nonce + creation_time + ENV['VM_ACCOUNT_KEY'])).chomp
