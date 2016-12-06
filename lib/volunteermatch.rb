@@ -12,10 +12,8 @@ module VolunteerMatch
 
   class << self
 
-    def initialize()
-      @account_name = ENV['VM_ACCOUNT_NAME']
-      @api_key      = ENV['VM_ACCOUNT_KEY']
-    end
+    @account_name = ENV['VM_ACCOUNT_NAME']
+    @api_key      = ENV['VM_ACCOUNT_KEY']
 
     def hello_world(name)
       call :helloWorld, {:name => name}.to_json
