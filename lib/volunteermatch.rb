@@ -1,6 +1,3 @@
-#!/usr/bin/env ruby
-
-require 'rubygems'
 require 'base64'
 require 'digest/sha2'
 require 'net/http'
@@ -8,29 +5,28 @@ require 'uri'
 require 'json'
 require 'ostruct'
 
-module VolunteerMatch
+module Volunteermatch
 
   class << self
 
-    @account_name = ENV['VM_ACCOUNT_NAME']
-    @api_key      = ENV['VM_ACCOUNT_KEY']
-
     def hello_world(name)
-      call :helloWorld, {:name => name}.to_json
+      binding.pry
+      call(:helloWorld, {:name => name}.to_json)
     end
 
     protected
 
     def call(action, json_query)
-      nonce           = Digest::SHA2.hexdigest(rand.to_s)[0, 20]
-      creation_time   = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%S%z")
-      password_digest = Base64.encode64(Digest::SHA2.digest(nonce + creation_time + @api_key)).chomp
-      url             = URI.parse("http://www.volunteermatch.org/api/call?action=#{action.to_s}&query=" + URI.encode(json_query))
+      binding.pry
+      nonce = Digest::SHA2.hexdigest(rand.to_s)[0, 20]
+      creation_time = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%S%z")
+      password_digest = Base64.encode64(Digest::SHA2.digest(nonce + creation_time + ENV['VM_ACCOUNT_KEY'])).chomp
+      url = URI.parse("http://www.volunteermatch.org/api/call?action=#{action.to_s}&query=" + URI.encode(json_query))
 
-      req             = Net::HTTP::Get.new(url.request_uri)
+      req = Net::HTTP::Get.new(url.request_uri)
       req.add_field('Content-Type', 'application/json')
       req.add_field('Authorization', 'WSSE profile="UsernameToken"')
-      req.add_field('X-WSSE', 'UsernameToken Username="' + @account_name + '", PasswordDigest="' + password_digest + '", ' +
+      req.add_field('X-WSSE', 'UsernameToken Username="' + ENV['VM_ACCOUNT_NAME'] + '", PasswordDigest="' + password_digest + '", ' +
           'Nonce="' + nonce + '", Created="' + creation_time + '"')
 
       res = Net::HTTP.new(url.host, url.port).start { |http| http.request(req) }

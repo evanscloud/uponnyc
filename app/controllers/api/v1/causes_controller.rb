@@ -1,6 +1,7 @@
 module Api
   module V1
     class CausesController < ApplicationController
+      extend Volunteermatch
 
       def index
         causes = Cause.all
