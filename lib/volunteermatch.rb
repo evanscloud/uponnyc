@@ -9,8 +9,8 @@ require 'json'
 require 'ostruct'
 
 module VolunteerMatch
-  
-  class VolunteerMatchApi
+
+  class << self
 
     def initialize()
       @account_name = ENV['VM_ACCOUNT_NAME']
