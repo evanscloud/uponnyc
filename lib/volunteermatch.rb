@@ -8,13 +8,6 @@ require 'uri'
 require 'json'
 require 'ostruct'
 
-if ARGV.length == 2
-  account_name, api_key = ARGV
-else
-  puts "Usage: #{$0} account_name api_key"
-  exit 1
-end
-
 class VolunteerMatchApi
 
   def initialize()
@@ -46,8 +39,3 @@ class VolunteerMatchApi
   end
 
 end
-
-api = VolunteerMatchApi.new()
-response = api.hello_world("VolunteerMatch") # JSON {"name":"VolunteerMatch","result":"Hello VolunteerMatch!"}
-puts response.name # "VolunteerMatch"
-puts response.result # "Hello VolunteerMatch!"
