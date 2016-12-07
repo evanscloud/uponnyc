@@ -15,8 +15,6 @@ module Volunteermatch
       call(:helloWorld, {:name => name}.to_json)
     end
 
-    protected
-
     def call(action, json_query)
       nonce = Digest::SHA2.hexdigest(rand.to_s)[0, 20]
       creation_time = Time.now.utc.strftime("%Y-%m-%dT%H:%M:%S%z")
