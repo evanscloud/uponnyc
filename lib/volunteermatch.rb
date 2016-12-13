@@ -33,7 +33,7 @@ module Volunteermatch
     end
 
     def call_events(cause)
-      vm_events = call(:searchOpportunities, {:location => "new york", :fieldsToDisplay => ["title", "parentOrg", "availability", "plaintextDescription", "location", "skillsNeeded", "minimumAge", "vmUrl"], :numberOfResults => 25, :sortOrder => "asc", :categoryIds => [cause.to_i]}.to_json)
+      vm_events = call(:searchOpportunities, {:location => "new york", :fieldsToDisplay => ["title", "parentOrg", "availability", "plaintextDescription", "location", "skillsNeeded", "minimumAge", "vmUrl"], :numberOfResults => 20, :sortOrder => "asc", :categoryIds => [cause.to_i]}.to_json)
 
       vm_events.opportunities.each do |event|
         if !Event.exists?(event['id'])
