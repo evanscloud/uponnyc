@@ -32,6 +32,18 @@ module Volunteermatch
       OpenStruct.new(JSON.parse res.body)
     end
 
+    def call_events(cause)
+      vm_events = call(:searchOpportunities, {:location => "new york", :fieldsToDisplay => ["title", "parentOrg", "availability", "plaintextDescription", "location", "skillsNeeded", "minimumAge", "vmUrl"], :numberOfResults => 25, :sortOrder => "asc", :categoryIds => [cause.to_i]}.to_json)
+
+      vm_events.opportunities.each do |event|
+        if !Event.exists?(event['id'])
+          Event.create(id: event['id'], title: event['title'], organization: event['parentOrg']['name'], start: event['availability']['startDate'], end: event['availability']['endDate'], description: event['plaintextDescription'], address: event['location']['postalCode'], skills: event['skillsNeeded'], age: event['minimumAge'], url: event['vmUrl'], cause_id: cause.to_i)
+        else
+          break
+        end
+      end
+    end
+
   end
 
 end
