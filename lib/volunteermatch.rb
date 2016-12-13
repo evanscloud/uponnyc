@@ -38,8 +38,6 @@ module Volunteermatch
       vm_events.opportunities.each do |event|
         if !Event.exists?(event['id'])
           Event.create(id: event['id'], title: event['title'], organization: event['parentOrg']['name'], start: event['availability']['startDate'], end: event['availability']['endDate'], description: event['plaintextDescription'], address: event['location']['postalCode'], skills: event['skillsNeeded'], age: event['minimumAge'], url: event['vmUrl'], cause_id: cause.to_i)
-        else
-          break
         end
       end
     end
