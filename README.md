@@ -6,6 +6,8 @@ UponNYC provides a simple way to search for volunteering opportunities in New Yo
 
 New York City is home to one of the world's most largest and diverse urban populations. The goal is to provide an easy tool to bring people together and build empowering communities. If each individual provides even the smallest effort, the entire community will thrive as a whole. Together, we can make a change. Lend a hand and make a difference today.
 
+I would like to thank [VolunteerMatch.org](https://www.volunteermatch.org) for use of there API and for creating a vision of bringing people together. They strive to do more when it comes to connecting and empowering individuals to help each other. If you have time, take a look at the initiatives they advocate. Please support them on there quest to continue making a difference.
+
 ## Installation
 
 ### Fork and clone repo
