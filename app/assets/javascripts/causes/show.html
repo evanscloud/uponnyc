@@ -35,11 +35,14 @@
             <div class="event">
               <div class="content">
                 <div class="summary">
-                  Start Date: {{ event.attributes.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+                  <span ng-if="event.attributes.start != null">Start Date: {{ event.attributes.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</span>
+                  <span ng-if="event.attributes.start == null">Start Date: N/A</span>
                   <br>
-                  End Date: {{ event.attributes.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+                  <span ng-if="event.attributes.end != null">End Date: {{ event.attributes.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</span>
+                  <span ng-if="event.attributes.end == null">End Date: N/A</span>
                   <br>
-                  Location: {{ event.attributes.address }}
+                  <span ng-if="event.attributes.address != null">Location: {{ event.attributes.address }}</span>
+                  <span ng-if="event.attributes.address == null">Location: N/A</span>
                 </div>
               </div>
             </div>
