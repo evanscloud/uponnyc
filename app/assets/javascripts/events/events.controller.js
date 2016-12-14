@@ -5,9 +5,10 @@ function EventsController($window, event) {
   vm.event = event.data;
   vm.hyperlink = openHyperlink;
   vm.comments = event.included;
+  debugger;
 
   function openHyperlink() {
-    $window.open('http://' + event.data.attributes.url);
+    $window.open(decodeURIComponent(event.data.attributes.url));
   };
 
 };
