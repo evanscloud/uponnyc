@@ -15,21 +15,28 @@
             <div class="event">
               <div class="content">
                 <div class="summary">
-                  Location: {{ vm.event.attributes.address }}
+                  <span ng-if="vm.event.attributes.address != null">Location: {{ vm.event.attributes.address }}</span>
+                  <span ng-if="vm.event.attributes.address == null">Location: N/A</span>
                   <br>
-                  Start Date: {{ vm.event.attributes.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
+                  <span ng-if="vm.event.attributes.start != null">Start Date: {{ vm.event.attributes.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</span>
+                  <span ng-if="vm.event.attributes.start == null">Start Date: N/A</span>
                   <br>
-                  End Date: {{ vm.event.attributes.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}
-
+                  <span ng-if="vm.event.attributes.end != null">End Date: {{ vm.event.attributes.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</span>
+                  <span ng-if="vm.event.attributes.end == null">End Date: N/A</span>
+                  <br>
                   <h3>Information</h3>
                   <p>Description:<br>
-                    {{ vm.event.attributes.description }}
+                    <span ng-if="vm.event.attributes.description != null">{{ vm.event.attributes.description }}</span>
+                    <span ng-if="vm.event.attributes.description == null">No description. Please visit the link for more details!</span>
                   </p>
+                  </span>
 
                   <p>
-                    Minimum Age: {{ vm.event.attributes.age }}
+                    <span ng-if="vm.event.attributes.age != null">Minimum Age: {{ vm.event.attributes.age }}</span>
+                    <span ng-if="vm.event.attributes.age == null">Minimum Age: No age requirement!</span>
                     <br>
-                    Skills Needed: {{ vm.event.attributes.skills }}
+                    <span ng-if="vm.event.attributes.skills != null">Skills Needed: {{ vm.event.attributes.skills }}</span>
+                    <span ng-if="vm.event.attributes.skills == null">Skills Needed: No skills required!</span>
                   </p>
                 </div>
               </div>
