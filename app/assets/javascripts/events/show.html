@@ -25,19 +25,16 @@
                   <span ng-if="vm.event.attributes.end == null">End Date: N/A</span>
                   <br>
                   <h3>Information</h3>
-                  <p>Description:<br>
-                    <span ng-if="vm.event.attributes.description != null">{{ vm.event.attributes.description }}</span>
-                    <span ng-if="vm.event.attributes.description == null">No description. Please visit the link for more details!</span>
-                  </p>
-                  </span>
+                  Description:
+                  <br>
+                    <p ng-if="vm.event.attributes.description != null">{{ vm.event.attributes.description }}</p>
+                    <p ng-if="vm.event.attributes.description == null">No description. Please visit the link for more details!</p>
 
-                  <p>
-                    <span ng-if="vm.event.attributes.age != null">Minimum Age: {{ vm.event.attributes.age }}</span>
-                    <span ng-if="vm.event.attributes.age == null">Minimum Age: No age requirement!</span>
-                    <br>
-                    <span ng-if="vm.event.attributes.skills != null">Skills Needed: {{ vm.event.attributes.skills }}</span>
-                    <span ng-if="vm.event.attributes.skills == null">Skills Needed: No skills required!</span>
-                  </p>
+                    <p ng-if="vm.event.attributes.age != null">Minimum Age: {{ vm.event.attributes.age }}</p>
+                    <p ng-if="vm.event.attributes.age == null">Minimum Age: No age requirement!</p>
+
+                    <p ng-if="vm.event.attributes.skills != null">Skills Needed: {{ vm.event.attributes.skills }}</p>
+                    <p ng-if="vm.event.attributes.skills == null">Skills Needed: No skills required!</p>
                 </div>
               </div>
             </div>
